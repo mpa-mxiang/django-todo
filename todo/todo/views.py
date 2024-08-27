@@ -8,7 +8,7 @@ def signup(request):
         frm = request.POST.get('frm')
         email_id = request.POST.get('emailId')
         pwd = request.POST.get('pwd')
-        new_user = User.object.create_user(frm, email_id, pwd)
+        new_user = User.objects.create_user(frm, email_id, pwd)
         new_user.save()
 
     return render(request, 'signup.html')
