@@ -5,8 +5,9 @@ from todo.models import Todo
 from django.contrib.auth import authenticate, login, logout
 from django.db import IntegrityError
 
-error_message = None
 def signup(request):
+
+    error_message = None    
     if request.method == "POST":
         frm = request.POST.get('frm')
         email_id = request.POST.get('emailId')
@@ -23,6 +24,8 @@ def signup(request):
 
 
 def login(request):
+
+    error_message = None    
     if request.method == "POST":
         frm = request.POST.get('frm')
         pwd = request.POST.get('pwd')
@@ -31,6 +34,5 @@ def login(request):
             return redirect('/todo')
         else:
             error_message = "Wrong Username and/or Password, please try it again."
-            return redirect('/login')
-
-    return render(request, 'login.html')
+    
+    return render(request, 'login.html', {'error_message': error_message})
