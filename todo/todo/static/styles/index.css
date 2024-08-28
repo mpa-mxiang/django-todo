@@ -93,10 +93,7 @@ label {
 }
 
 .line {
-
-  margin-top: 20px;
-  margin-left: 10px;
-  margin-bottom: 20px;
+  margin: 0 10px;
   height: 1px;
   width: 500px;
   border: none;
@@ -111,7 +108,6 @@ label {
   color: #ffff00bc;
   font-size: 20px;
   font-weight: 500;
-  margin-left: 45%;
   padding: 0;
   text-align: center;
   margin-top: 20px;
@@ -158,13 +154,34 @@ a:hover {
   margin-left: 10px;
 }
 
+.field:last-child {
+  display: block;
+  text-align: center;
+}
+
 @media only screen and (max-width: 425px) {
   .signup-box {
     width: 80%;
   }
 
-  .inp {
+  .inp, 
+  .line {
     width: 90%;
+  }
+
+  .submit-button {
+    width: 90%;
+    padding: auto;
+  }
+
+  .error-message {
+    margin: 1rem;
+    font-size: 0.5rem;
+  }
+
+  label {
+    font-size: 1rem;
+    margin: 1rem;
   }
 
 }
