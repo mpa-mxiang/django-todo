@@ -39,7 +39,7 @@ body {
     
 
   }
-  b{
+  label {
     font-size: 20px;
     font-weight: 500;
     margin-left: 10px;
@@ -99,7 +99,7 @@ body {
     box-sizing: border-box;
     
 }
-.anc{
+.redirect{
     text-decoration: none;
     color: #ffff00bc;
     font-size: 20px;
