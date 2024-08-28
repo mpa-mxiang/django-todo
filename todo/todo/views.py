@@ -2,11 +2,11 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from todo import models
 from todo.models import Todo
-
+from django.contrib.auth import authenticate, login, logout
 from django.db import IntegrityError
 
+error_message = None
 def signup(request):
-    error_message = None
     if request.method == "POST":
         frm = request.POST.get('frm')
         email_id = request.POST.get('emailId')
@@ -23,5 +23,14 @@ def signup(request):
 
 
 def login(request):
+    if request.method == "POST":
+        frm = request.POST.get('frm')
+        pwd = request.POST.get('pwd')
+        login_user = authenticate(request, username=frm, password=pwd)
+        if login_user is not None:
+            return redirect('/todo')
+        else:
+            error_message = "Wrong Username and/or Password, please try it again."
+            return redirect('/login')
 
     return render(request, 'login.html')
