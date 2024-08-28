@@ -10,5 +10,10 @@ def signup(request):
         pwd = request.POST.get('pwd')
         new_user = User.objects.create_user(frm, email_id, pwd)
         new_user.save()
+        return redirect('/login')
 
     return render(request, 'signup.html')
+
+def login(request):
+
+    return render(request, 'login.html')
