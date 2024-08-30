@@ -36,3 +36,10 @@ def login(request):
             error_message = "Wrong Username and/or Password, please try it again."
     
     return render(request, 'login.html', {'error_message': error_message})
+
+def todo(request):
+    if request.method=="POST":
+        title = request.POST.get('title')
+        task = models.Todo(title=title, user=request.user)
+        task.save()
+    return render(request, "todo.html")

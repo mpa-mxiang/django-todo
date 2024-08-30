@@ -15,6 +15,24 @@
 </head>
 
 <body>
+    <div class="signup-login">
+        <div class="signup-box">
+            <form method="post">
+                {% csrf_token %}
+                <div class="heading">
+                    Get Things Done!
+                </div>
+
+                <div class="line"></div>
+                <input type="text" class="inp" name="title" required placeholder="Add todo task" />
+                <input type="submit" class="submit-button" value="Add Task" />
+
+
+            </form>
+
+        </div>
+
+    </div>
 </body>
 
 </html>
