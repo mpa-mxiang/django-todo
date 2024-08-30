@@ -16,7 +16,11 @@
 
 <body>
     <div class="signup-login">
+        <div>
+            <h1>Hello {{user}}</h1>
+        </div>
         <div class="signup-box">
+            <i class="fa-solid fa-right-from-bracket"></i>
             <form method="post">
                 {% csrf_token %}
                 <div class="heading">
@@ -30,6 +34,16 @@
 
             </form>
 
+            {% for todo in res %}
+            <div class="todo">
+                <h5>{{todo.date}}</h5>
+                <p>{{todo.title}}</p>
+                <div>
+                    <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href=""><i class="fa-solid fa-trash"></i></a>
+                </div>
+            </div>
+            {% endfor %}
         </div>
 
     </div>

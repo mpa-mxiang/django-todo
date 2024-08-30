@@ -10,14 +10,14 @@
     font-size: 1.75rem;
   }
   
-  .TodoWrapper {
+  .todoWrapper {
     background-color: #252525;
     margin-top: 50px;
     padding: 2px;
     border-radius: 5px;
   }
   
-  .TodoForm {
+  .todoForm {
     width: 100%;
   }
   
@@ -47,7 +47,7 @@
     
   }
   
-  .Todo {
+  .todo {
     display: flex;
     justify-content: space-between;
     align-items: center;
