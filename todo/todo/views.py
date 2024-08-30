@@ -4,6 +4,7 @@ from todo import models
 from todo.models import Todo
 from django.contrib.auth import authenticate, login, logout
 from django.db import IntegrityError
+from django.contrib.auth.decorators import login_required
 
 def signup(request):
 
@@ -23,7 +24,7 @@ def signup(request):
     return render(request, 'signup.html', {'error_message': error_message})
 
 
-def login(request):
+def user_logn(request):
 
     error_message = None    
     if request.method == "POST":
@@ -31,15 +32,23 @@ def login(request):
         pwd = request.POST.get('pwd')
         login_user = authenticate(request, username=frm, password=pwd)
         if login_user is not None:
+            login(request, login_user)
             return redirect('/todo')
         else:
             error_message = "Wrong Username and/or Password, please try it again."
     
     return render(request, 'login.html', {'error_message': error_message})
 
+@login_required(login_url='/login')
 def todo(request):
-    if request.method=="POST":
-        title = request.POST.get('title')
-        task = models.Todo(title=title, user=request.user)
-        task.save()
-    return render(request, "todo.html")
+    if request.method == 'POST':
+        title=request.POST.get('title')
+        obj=models.Todo(title=title,user=request.user)
+        obj.save()
+        user=request.user        
+        res=models.Todo.objects.filter(user=user).order_by('-date')
+        return redirect('/todo',{'res':res})
+        
+    
+    res=models.Todo.objects.filter(user=request.user).order_by('-date')
+    return render(request, 'todo.html',{'res':res,})
