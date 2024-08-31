@@ -9,6 +9,11 @@
     margin-bottom: 0.5rem;
     font-size: 1.75rem;
   }
+
+  .greeting {
+    display: flex;
+    flex-direction: row;
+  }
   
   .todoWrapper {
     background-color: #252525;

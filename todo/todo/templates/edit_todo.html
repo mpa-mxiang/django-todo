@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <title>Todo</title>
+    <link rel="stylesheet" href="{% static 'styles/index.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css" />
+    <script src="https://kit.fontawesome.com/7d931a3f92.js" crossorigin="anonymous"></script></head>
+
+<body>
+    <div class="signup-login">
+        <div>
+            <h1>Hello {{user}}</h1>
+        </div>
+        <div class="signup-box">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <form method="post">
+                {% csrf_token %}
+                <div class="heading">
+                    Get Things Done!
+                </div>
+
+                <div class="line"></div>
+                <input type="text" class="inp" name="title" required placeholder="Edit todo task" value={{obj.title}}/>
+                <input type="submit" class="submit-button" value="Update Task" />
+
+
+            </form>
+
+            {% for todo in res %}
+            <div class="todo">
+                <h5>{{ todo.date|date:"Y/m/d" }}</h5>
+                <p>{{todo.title}}</p>
+                <div>
+                    <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href=""><i class="fa-solid fa-trash"></i></a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</body>
+
+</html>
