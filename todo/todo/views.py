@@ -52,3 +52,6 @@ def todo(request):
     
     res=models.Todo.objects.filter(user=request.user).order_by('-date')
     return render(request, 'todo.html',{'res':res,})
+
+def edit_todo(request):
+    pass
