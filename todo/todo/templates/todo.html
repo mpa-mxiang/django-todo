@@ -35,7 +35,7 @@
 
             {% for todo in res %}
             <div class="todo">
-                <h5>{{todo.date}}</h5>
+                <h5>{{ todo.date|date:"Y/m/d" }}</h5>
                 <p>{{todo.title}}</p>
                 <div>
                     <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
