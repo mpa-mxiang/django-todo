@@ -55,7 +55,7 @@ def todo(request):
     return render(request, 'todo.html', {'res': res, })
 
 
-@login_required(login_url='/login')
+@login_required(login_url='/loginn')
 def edit_todo(request, srno):
     if request.method == 'POST':
         title = request.POST.get('title')
@@ -66,3 +66,8 @@ def edit_todo(request, srno):
 
     obj = models.Todo.objects.get(srno=srno)
     return render(request, 'edit_todo.html', {'obj': obj})
+
+def delete_todo(request, srno):
+    obj = models.Todo.objects.get(srno=srno)
+    obj.delete()
+    return redirect('/todo')
