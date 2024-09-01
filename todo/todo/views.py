@@ -55,23 +55,14 @@ def todo(request):
     return render(request, 'todo.html', {'res': res, })
 
 
+@login_required(login_url='/login')
 def edit_todo(request, srno):
-    # Fetch the todo item to be edited
-    obj = models.Todo.objects.get(srno=srno)
-
     if request.method == 'POST':
-        # Update the title of the todo item
         title = request.POST.get('title')
+        obj = models.Todo.objects.get(srno=srno)
         obj.title = title
         obj.save()
-
-        # Fetch updated list of tasks for the logged-in user
-        user = request.user
-        res = models.Todo.objects.filter(user=user).order_by('-date')
-
-        # Redirect back to the todo page
         return redirect('/todo')
 
-    # If it's a GET request, render the todo page
-    res = models.Todo.objects.filter(user=request.user).order_by('-date')
-    return render(request, 'todo.html',{'res':res,})
+    obj = models.Todo.objects.get(srno=srno)
+    return render(request, 'edit_todo.html', {'obj': obj})
