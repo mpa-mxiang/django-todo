@@ -18,8 +18,12 @@
     <div class="signup-login">
         <div class="greeting">
             <h1>Hello {{user}}</h1>
-
-            <i class="fa-solid fa-right-from-bracket"></i>
+            <div class="logout">
+                <a href="{& url 'signout' &}" class="log">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </a>
+            </div>
+            
         </div>
         <div class="signup-box">
             <form method="post">

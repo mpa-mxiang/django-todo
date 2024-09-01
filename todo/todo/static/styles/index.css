@@ -119,7 +119,7 @@ label {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-.anca {
+.logout {
   font-size: 25px;
   margin-top: 7px;
   margin-right: -41px;
@@ -132,12 +132,6 @@ a:hover {
 .heads {
   display: flex;
   justify-content: space-evenly;
-}
-
-.ancaa {
-  font-size: 25px;
-  margin-top: 29px;
-  margin-left: -40px;
 }
 
 .completed {
