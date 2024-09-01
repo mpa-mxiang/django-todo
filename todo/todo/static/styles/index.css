@@ -103,10 +103,8 @@ label {
   cursor: pointer;
 }
 
-.logout {
-  font-size: 25px;
-  margin-top: 7px;
-  margin-right: -41px;
+.log {
+  padding-top: 0.5rem;
 }
 
 a:hover {
