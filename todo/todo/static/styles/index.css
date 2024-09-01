@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-
 }
 
 .signup-login {
@@ -24,7 +23,6 @@ body {
   width: 520px;
   border-radius: 25px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-
 }
 
 .heading {
@@ -34,8 +32,6 @@ body {
   padding: 0;
   text-align: center;
   margin-top: 20px;
-
-
 }
 
 label {
@@ -64,7 +60,6 @@ label {
 
 .inp::placeholder {
   color: #ffffffa5;
-
 }
 
 .submit-button {
@@ -95,9 +90,7 @@ label {
   width: 500px;
   border: none;
   background-color: #ffffff;
-  border: 0px solid rgba(255, 255, 255, 0.5);
   box-sizing: border-box;
-
 }
 
 .redirect {
@@ -105,18 +98,9 @@ label {
   color: #ffff00bc;
   font-size: 20px;
   font-weight: 500;
-  padding: 0;
   text-align: center;
   margin-top: 20px;
   cursor: pointer;
-}
-
-.signup-box1 {
-  background-color: #ffffff30;
-  height: 555px;
-  width: 520px;
-  border-radius: 25px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .logout {
@@ -162,7 +146,6 @@ a:hover {
 
   .submit-button {
     width: 90%;
-    padding: auto;
   }
 
   .error-message {
@@ -174,5 +157,55 @@ a:hover {
     font-size: 1rem;
     margin: 1rem;
   }
+}
 
+.App {
+  text-align: center;
+}
+
+h1 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+}
+
+.greeting {
+  display: flex;
+  flex-direction: row;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffff00a9;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  font-size: 20px;
+  font-weight: 300;
+  margin: 10px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.fa-trash {
+  margin-left: 0.75rem;
+}
+
+.todo-btn:hover {
+  background: #8758ff;
+  color: #fff;
+  box-shadow: 0 0 10px #8758ff;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

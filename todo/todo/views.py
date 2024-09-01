@@ -25,7 +25,7 @@ def signup(request):
     return render(request, 'signup.html', {'error_message': error_message})
 
 
-def user_logn(request):
+def user_login(request):
 
     error_message = None
     if request.method == "POST":
@@ -55,7 +55,7 @@ def todo(request):
     return render(request, 'todo.html', {'res': res, })
 
 
-@login_required(login_url='/loginn')
+@login_required(login_url='/login')
 def edit_todo(request, srno):
     if request.method == 'POST':
         title = request.POST.get('title')
@@ -67,6 +67,7 @@ def edit_todo(request, srno):
     obj = models.Todo.objects.get(srno=srno)
     return render(request, 'edit_todo.html', {'obj': obj})
 
+@login_required(login_url='/login')
 def delete_todo(request, srno):
     obj = models.Todo.objects.get(srno=srno)
     obj.delete()
