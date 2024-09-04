@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
@@ -14,13 +14,13 @@
 </head>
 
 <body>
-    <div class="signup-login">
+    <main class="signup-login">
         <div class="signup-box">
             <form method="post">
                 {% csrf_token %}
-                <div class="heading">
+                <h1 class="heading">
                     SignUp
-                </div>
+                </h1>
 
                 <div class="line"></div>
 
@@ -59,7 +59,7 @@
 
             </form>
         </div>
-    </div>
+    </main>
 </body>
 
 </html>

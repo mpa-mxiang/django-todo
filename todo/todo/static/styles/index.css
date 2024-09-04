@@ -184,11 +184,11 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #ffff00a9;
-  color: #fff;
+  background: #BEC21F;
+  color: #000;
   padding: 10px;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 12px;
   font-weight: 300;
   margin: 1rem;
   text-align: center;
