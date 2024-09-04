@@ -4,10 +4,10 @@ from . import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', views.signup),
-    path('login/', views.user_login),
-    path('todo/', views.todo),
+    path('', views.signup, name='signup'),
+    path('login/', views.user_login, name='login'),
+    path('todo/', views.todo, name='todo'),
     path('edit_todo/<int:srno>', views.edit_todo, name='edit_todo'),
-    path('delete_todo/<int:srno>', views.delete_todo),
-    path('signout/', views.signout, name="signout")
+    path('delete_todo/<int:srno>', views.delete_todo, name='delete_todo'),
+    path('signout/', views.signout, name="signout"),
 ]
