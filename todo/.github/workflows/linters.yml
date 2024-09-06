@@ -14,10 +14,20 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "18.x"
-      - name: Setup Lighthouse
-        run: npm install -g @lhci/cli@0.11.x
+      - uses: actions/setup-python@v3
+        with:
+          python-version: "3.x"
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+          npm install -g @lhci/cli@0.11.x
+      - name: Run Django Development Server
+        run: |
+          python manage.py migrate
+          nohup python manage.py runserver 127.0.0.1:8000 &
       - name: Lighthouse Report
-        run: lhci autorun --upload.target=temporary-public-storage --collect.staticDistDir=.
+        run: |
+          lhci autorun --upload.target=temporary-public-storage --collect.url=http://127.0.0.1:8000
 
   webhint:
     name: Webhint
