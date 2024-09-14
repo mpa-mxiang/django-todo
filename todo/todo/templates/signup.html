@@ -1,65 +1,82 @@
 {% load static %}
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     <title>Signup</title>
     <link rel="stylesheet" href="{% static 'styles/index.css' %}" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700"
+      type="text/css"
+    />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <main class="signup-login">
-        <div class="signup-box">
-            <form method="post">
-                {% csrf_token %}
-                <h1 class="heading">
-                    SignUp
-                </h1>
+      <div class="signup-box">
+        <form method="post">
+          {% csrf_token %}
+          <h1 class="heading">SignUp</h1>
 
-                <div class="line"></div>
+          <div class="line"></div>
 
-                <div class="field">
-                    <label>Username</label>
-                    <input class="inp" type="text" name="frm" required placeholder="Enter Your Full Name">
-                </div>
+          <div class="field">
+            <label>Username</label>
+            <input
+              class="inp"
+              type="text"
+              name="frm"
+              required
+              placeholder="Enter Your Full Name"
+            />
+          </div>
 
-                <div class="field">
-                    <label>Email</label>
-                    <input class="inp" type="email" name="emailId" required placeholder="Enter Your Username">
-                </div>
+          <div class="field">
+            <label>Email</label>
+            <input
+              class="inp"
+              type="email"
+              name="emailId"
+              required
+              placeholder="Enter Your Username"
+            />
+          </div>
 
-                <div class="field">
-                    <label>Password</label>
-                    <input class="inp" type="password" name="pwd" required placeholder="Enter Password">
-                </div>
-                
-                <div class="field">
-                    <input class="submit-button" type="submit" value="Signup">
-                </div>
+          <div class="field">
+            <label>Password</label>
+            <input
+              class="inp"
+              type="password"
+              name="pwd"
+              required
+              placeholder="Enter Password"
+            />
+          </div>
 
-                {% if error_message %}
-                <div class="error-message">
-                    {{ error_message }}
-                </div>
-                {% endif %}
-                
-                <div class="line"></div>
+          <div class="field">
+            <input class="submit-button" type="submit" value="Signup" />
+          </div>
 
-                <div class="field">
-                    <label>Already have an account?</label>
-                    <br>
-                    <a class="redirect" href="/login">Login</a>
-                </div>
+          {% if error_message %}
+          <div class="error-message">{{ error_message }}</div>
+          {% endif %}
 
-            </form>
-        </div>
+          <div class="line"></div>
+
+          <div class="field">
+            <label>Already have an account?</label>
+            <br />
+            <a class="redirect" href="/login">Login</a>
+          </div>
+        </form>
+      </div>
     </main>
-</body>
-
+  </body>
 </html>

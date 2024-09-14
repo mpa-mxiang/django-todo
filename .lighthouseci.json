@@ -1,0 +1,5 @@
+{
+  "settings": {
+    "staticDistDir": "./todo/todo/templates"
+  }
+}
